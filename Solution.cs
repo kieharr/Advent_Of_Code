@@ -35,11 +35,11 @@ public abstract class Solution<TInput, TResult> where TInput: class
     {
         if (typeof(TInput) == typeof(string))
         {
-            return File.ReadAllText(filename); //.Trim();
+            return File.ReadAllText(filename);
         }
         if(typeof(TInput) == typeof(IEnumerable<string>))
         {
-            return File.ReadLines(filename);//.Select(x => x.Trim());
+            return File.ReadLines(filename);
         }
 
         throw new ArgumentException($"No parser found for type {typeof(TInput)}");
