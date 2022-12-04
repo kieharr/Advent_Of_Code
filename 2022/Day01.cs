@@ -3,7 +3,7 @@
 public class Day01: Solution<string, int>
 {
     private IEnumerable<int> Calories => Input.Split("\n\n")
-        .Select(x => x.Split("\n").Select(int.Parse).Sum());
+        .Select(x => x.Split("\n").Sum(int.Parse));
     
     public override int Part1()
     {
