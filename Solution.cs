@@ -25,7 +25,7 @@ public abstract class Solution<TInput, TResult> where TInput: class
             var cont = client.GetStringAsync(url).Result;
 
             new FileInfo(filename).Directory.Create();
-            File.WriteAllText(filename, cont.Trim());
+            File.WriteAllText(filename, cont);
         }
         
         Input = (TInput)ParseInput(filename);
