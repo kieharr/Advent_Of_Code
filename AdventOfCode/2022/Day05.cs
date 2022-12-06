@@ -2,7 +2,7 @@
 
 namespace AdventOfCode._2022;
 
-public class Day05: Solution<IEnumerable<string>, string>
+public class Day05: Solution<string>
 {
     private readonly Regex _moveRegex = new(@"move (?'move'\d+) from (?'from'\d+) to (?'to'\d+)");
 

@@ -7,7 +7,7 @@ jqHRNqRjqzjGDLGLrsFMfFZSrLrFZsSL
 PmmdzqPrVvPwwTWBwg
 wMqvLMZHhHMvwLHjbvcjnnSBnvTQFn
 ttgJtRGJQctTZtZT
-CrZsJsPPZsGzwwsLwLmpwMDw".Split(Environment.NewLine);
+CrZsJsPPZsGzwwsLwLmpwMDw".ToEnumerable();
 
     [Test]
     public void TestPart1()

@@ -2,7 +2,7 @@
 
 public class Day01Tests
 {
-    private readonly string _input = @"1000
+    private readonly IEnumerable<string> _input = @"1000
 2000
 3000
 
@@ -15,7 +15,7 @@ public class Day01Tests
 8000
 9000
 
-10000".Replace(Environment.NewLine, "\n");
+10000".ToEnumerable();
 
     [Test]
     public void TestPart1()

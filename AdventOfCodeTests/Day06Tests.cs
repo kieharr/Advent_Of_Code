@@ -11,7 +11,7 @@ public class Day06Tests
         {
             var sut = new Day06();
             
-            var result = sut.Part1(input);
+            var result = sut.Part1(input.ToEnumerable());
             
             Assert.That(result, Is.EqualTo(expected));
         }
@@ -25,7 +25,7 @@ public class Day06Tests
         {
             var sut = new Day06();
             
-            var result = sut.Part2(input);
+            var result = sut.Part2(input.ToEnumerable());
             
             Assert.That(result, Is.EqualTo(expected));
         }

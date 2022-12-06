@@ -4,7 +4,7 @@ public class Day02Tests
 {
     private readonly IEnumerable<string> _input = @"A Y
 B X
-C Z".Split(Environment.NewLine);
+C Z".ToEnumerable();
 
     [Test]
     public void TestPart1()

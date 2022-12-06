@@ -1,6 +1,6 @@
 ﻿namespace AdventOfCode._2022;
 
-public class Day02: Solution<IEnumerable<string>, int>
+public class Day02: Solution<int>
 {
     public override int Part1(IEnumerable<string> input)
     {

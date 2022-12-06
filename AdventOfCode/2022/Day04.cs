@@ -2,7 +2,7 @@
 
 namespace AdventOfCode._2022;
 
-public class Day04: Solution<IEnumerable<string>, int>
+public class Day04: Solution<int>
 {
     private readonly Regex _regex = new (@"(\d+)-(\d+),(\d+)-(\d+)");
 
