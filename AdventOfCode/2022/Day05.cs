@@ -6,12 +6,12 @@ public class Day05: Solution<IEnumerable<string>, string>
 {
     private readonly Regex _moveRegex = new(@"move (?'move'\d+) from (?'from'\d+) to (?'to'\d+)");
 
-    public override string Part1()
+    protected override string Part1(IEnumerable<string> input)
     {
         Dictionary<int, Stack<char>> stacks = new();
         Stack<string> boxLines = new();
 
-        using var enumerator = Input.GetEnumerator();
+        using var enumerator = input.GetEnumerator();
         enumerator.MoveNext();
         
         while (enumerator.Current.Contains('['))
@@ -38,8 +38,6 @@ public class Day05: Solution<IEnumerable<string>, string>
         return new string(stacks.Select(x => x.Value.Pop()).ToArray());
     }
 
-
-
     private void AddBoxLineToStacks(string boxLine, Dictionary<int, Stack<char>> stacks)
     {
         var i = 0;            
@@ -59,12 +57,12 @@ public class Day05: Solution<IEnumerable<string>, string>
         }
     }
     
-    public override string Part2()
+    protected override string Part2(IEnumerable<string> input)
     {
         Dictionary<int, Stack<char>> stacks = new();
         Stack<string> boxes = new();
 
-        var enumerator = Input.GetEnumerator();
+        var enumerator = input.GetEnumerator();
         enumerator.MoveNext();
         
         while (enumerator.Current.Contains('['))
