@@ -1,6 +1,4 @@
-﻿using AdventOfCode._2022;
-
-namespace AdventOfCodeTests;
+﻿namespace AdventOfCodeTests;
 
 public class Day05Tests
 {
@@ -19,20 +17,9 @@ move 1 from 1 to 2".Split(Environment.NewLine);
     {
         var sut = new Day05();
         
-        var result = sut.RunPart1(_input);
+        var result = sut.Part1(_input);
         
         Assert.That(result, Is.EqualTo("CMZ"));
-    }
-
-    [Test]
-    public void TestPart1_Solution()
-    {
-        var sut = new Day05();
-        var input = sut.GetInput();
-        
-        var result = sut.RunPart1(input);
-        
-        Assert.That(result, Is.EqualTo("SHQWSRBDL"));
     }
     
     [Test]
@@ -40,19 +27,20 @@ move 1 from 1 to 2".Split(Environment.NewLine);
     {
         var sut = new Day05();
         
-        var result = sut.RunPart2(_input);
+        var result = sut.Part2(_input);
         
         Assert.That(result, Is.EqualTo("MCD"));
+    }
+    
+    [Test]
+    public void TestPart1_Solution()
+    {
+        Assert.That(new Day05().Part1(), Is.EqualTo("SHQWSRBDL"));
     }
 
     [Test]
     public void TestPart2_Solution()
     {
-        var sut = new Day05();
-        var input = sut.GetInput();
-        
-        var result = sut.RunPart2(input);
-        
-        Assert.That(result, Is.EqualTo("CDTQZHBRS"));
+        Assert.That(new Day05().Part2(), Is.EqualTo("CDTQZHBRS"));
     }
 }

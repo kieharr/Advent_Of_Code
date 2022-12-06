@@ -5,13 +5,14 @@ namespace AdventOfCode._2022;
 public class Day04: Solution<IEnumerable<string>, int>
 {
     private readonly Regex _regex = new (@"(\d+)-(\d+),(\d+)-(\d+)");
-    protected override int Part1(IEnumerable<string> input)
+
+    public override int Part1(IEnumerable<string> input)
     {
         return input.Select(GetRanges)
             .Count(x => !x.Item1.Except(x.Item2).Any() || !x.Item2.Except(x.Item1).Any());
     }
-    
-    protected override int Part2(IEnumerable<string> input)
+
+    public override int Part2(IEnumerable<string> input)
     {
         return input.Select(GetRanges)
             .Count(x => x.Item1.Intersect(x.Item2).Any());

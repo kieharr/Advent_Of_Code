@@ -2,7 +2,7 @@
 
 public class Day02: Solution<IEnumerable<string>, int>
 {
-    protected override int Part1(IEnumerable<string> input)
+    public override int Part1(IEnumerable<string> input)
     {
         var lookup = new Dictionary<string, int>
         {
@@ -19,7 +19,7 @@ public class Day02: Solution<IEnumerable<string>, int>
         return input.Sum(x => lookup[x]);
     }
 
-    protected override int Part2(IEnumerable<string> input)
+    public override int Part2(IEnumerable<string> input)
     {
         var lookup = new Dictionary<string, int>
         {

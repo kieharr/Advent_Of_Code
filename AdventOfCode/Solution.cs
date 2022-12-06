@@ -4,34 +4,18 @@ namespace AdventOfCode;
 
 public abstract class Solution<TInput, TResult> where TInput: class
 {
-    public TResult RunPart1(TInput? input = null)
-    {
-        var stopwatch = Stopwatch.StartNew();
-        input ??= GetInput();
-        var result = Part1(input);
-        stopwatch.Stop();
-        
-        Console.WriteLine("Part 1:");
-        Console.WriteLine(result);
-        Console.WriteLine($"In {stopwatch.ElapsedMilliseconds} ms");
-        return result;
-    }
-    
-    public TResult RunPart2(TInput? input = null)
-    {
-        var stopwatch = Stopwatch.StartNew();
-        input ??= GetInput();
-        var result = Part2(input);
-        stopwatch.Stop();
+    public abstract TResult Part1(TInput input);
+    public abstract TResult Part2(TInput input);
 
-        Console.WriteLine("Part 2:");
-        Console.WriteLine(result);
-        Console.WriteLine($"In {stopwatch.ElapsedMilliseconds} ms");
-        return result;
+    public TResult Part1()
+    {
+        return Part1(GetInput());
     }
-    
-    protected abstract TResult Part1(TInput input);
-    protected abstract TResult Part2(TInput input);
+
+    public TResult Part2()
+    {
+        return Part2(GetInput());
+    }
     
     private readonly string _filename;
 
@@ -57,7 +41,7 @@ public abstract class Solution<TInput, TResult> where TInput: class
         }
     }
 
-    public TInput GetInput()
+    private TInput GetInput()
     {
         if (typeof(TInput) == typeof(string))
         {
@@ -70,18 +54,4 @@ public abstract class Solution<TInput, TResult> where TInput: class
 
         throw new ArgumentException($"No parser found for type {typeof(TInput)}");
     }
-    
-    // private static object ParseInput(string filename)
-    // {
-    //     if (typeof(TInput) == typeof(string))
-    //     {
-    //         return File.ReadAllText(filename);
-    //     }
-    //     if(typeof(TInput) == typeof(IEnumerable<string>))
-    //     {
-    //         return File.ReadLines(filename);
-    //     }
-    //
-    //     throw new ArgumentException($"No parser found for type {typeof(TInput)}");
-    // }
 }

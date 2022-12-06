@@ -6,7 +6,7 @@ public class Day05: Solution<IEnumerable<string>, string>
 {
     private readonly Regex _moveRegex = new(@"move (?'move'\d+) from (?'from'\d+) to (?'to'\d+)");
 
-    protected override string Part1(IEnumerable<string> input)
+    public override string Part1(IEnumerable<string> input)
     {
         Dictionary<int, Stack<char>> stacks = new();
         Stack<string> boxLines = new();
@@ -37,27 +37,8 @@ public class Day05: Solution<IEnumerable<string>, string>
 
         return new string(stacks.Select(x => x.Value.Pop()).ToArray());
     }
-
-    private void AddBoxLineToStacks(string boxLine, Dictionary<int, Stack<char>> stacks)
-    {
-        var i = 0;            
-        foreach (var chunk in boxLine.Chunk(4).ToList())
-        {
-            i++;
-            if (!chunk.Contains('[')) continue;
-            
-            if (stacks.TryGetValue(i, out var stack))
-            {
-                stack.Push(chunk[1]);
-            }
-            else
-            {
-                stacks.Add(i, new Stack<char>(new []{ chunk[1] }));
-            }
-        }
-    }
     
-    protected override string Part2(IEnumerable<string> input)
+    public override string Part2(IEnumerable<string> input)
     {
         Dictionary<int, Stack<char>> stacks = new();
         Stack<string> boxes = new();
@@ -94,6 +75,25 @@ public class Day05: Solution<IEnumerable<string>, string>
         }
 
         return new string(stacks.Select(x => x.Value.Pop()).ToArray());
+    }
+    
+    private void AddBoxLineToStacks(string boxLine, Dictionary<int, Stack<char>> stacks)
+    {
+        var i = 0;            
+        foreach (var chunk in boxLine.Chunk(4).ToList())
+        {
+            i++;
+            if (!chunk.Contains('[')) continue;
+            
+            if (stacks.TryGetValue(i, out var stack))
+            {
+                stack.Push(chunk[1]);
+            }
+            else
+            {
+                stacks.Add(i, new Stack<char>(new []{ chunk[1] }));
+            }
+        }
     }
     
     private Instruction ParseInstruction(string inputLine)

@@ -3,13 +3,13 @@ namespace AdventOfCode._2022;
 
 public class Day03: Solution<IEnumerable<string>, int>
 {
-    protected override int Part1(IEnumerable<string> input)
+    public override int Part1(IEnumerable<string> input)
     {
         return input.Select(x => x[..(x.Length / 2)].Intersect(x[(x.Length / 2)..]).First())
             .Sum(GetValue);
     }
 
-    protected override int Part2(IEnumerable<string> input)
+    public override int Part2(IEnumerable<string> input)
     {
         return input.Batch(3).Select(x => x.ToList())
             .Sum(x => GetValue(x[0].Intersect(x[1]).Intersect(x[2]).First()));

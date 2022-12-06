@@ -1,6 +1,4 @@
-﻿using AdventOfCode._2022;
-
-namespace AdventOfCodeTests;
+﻿namespace AdventOfCodeTests;
 
 public class Day01Tests
 {
@@ -24,40 +22,30 @@ public class Day01Tests
     {
         var sut = new Day01();
         
-        var result = sut.RunPart1(_input);
+        var result = sut.Part1(_input);
         
         Assert.That(result, Is.EqualTo(24_000));
     }
 
     [Test]
-    public void TestPart1_Solution()
-    {
-        var sut = new Day01();
-        var input = sut.GetInput();
-        
-        var result = sut.RunPart1(input);
-        
-        Assert.That(result, Is.EqualTo(69_177));
-    }
-    
-    [Test]
     public void TestPart2()
     {
         var sut = new Day01();
         
-        var result = sut.RunPart2(_input);
+        var result = sut.Part2(_input);
         
         Assert.That(result, Is.EqualTo(45_000));
+    }
+    
+    [Test]
+    public void TestPart1_Solution()
+    {
+        Assert.That(new Day01().Part1(), Is.EqualTo(69_177));
     }
 
     [Test]
     public void TestPart2_Solution()
     {
-        var sut = new Day01();
-        var input = sut.GetInput();
-        
-        var result = sut.RunPart2(input);
-        
-        Assert.That(result, Is.EqualTo(207_456));
+        Assert.That(new Day01().Part2(), Is.EqualTo(207_456));
     }
 }

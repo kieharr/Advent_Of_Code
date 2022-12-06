@@ -1,13 +1,13 @@
 ﻿namespace AdventOfCode._2022;
 
 public class Day06: Solution<string, int>
-{ 
-    protected override int Part1(string input)
+{
+    public override int Part1(string input)
     {
         return GetMarker(input, 4);
     }
 
-    protected override int Part2(string input)
+    public override int Part2(string input)
     {
         return GetMarker(input, 14);
     }
