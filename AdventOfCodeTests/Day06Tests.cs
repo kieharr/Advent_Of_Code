@@ -1,6 +1,6 @@
 ﻿namespace AdventOfCodeTests;
 
-public class Day06Tests
+public class Day06Tests: AoCTest<Day06, int>
 {
         [TestCase("mjqjpqmgbljsphdztnvjfqwrcgsmlb", 7)]
         [TestCase("bvwbjplbgvbhsrlpgdmjqwftvncz", 5)]
@@ -9,11 +9,7 @@ public class Day06Tests
         [TestCase("zcfzfwzzqfrljwzlrfnpqdbhtmscgvjw", 11)]
         public void TestPart1(string input, int expected)
         {
-            var sut = new Day06();
-            
-            var result = sut.Part1(input.ToEnumerable());
-            
-            Assert.That(result, Is.EqualTo(expected));
+            VerifyPart1(input.ToEnumerable(), expected);
         }
         
         [TestCase("mjqjpqmgbljsphdztnvjfqwrcgsmlb", 19)]
@@ -23,22 +19,18 @@ public class Day06Tests
         [TestCase("zcfzfwzzqfrljwzlrfnpqdbhtmscgvjw", 26)]
         public void TestPart2(string input, int expected)
         {
-            var sut = new Day06();
-            
-            var result = sut.Part2(input.ToEnumerable());
-            
-            Assert.That(result, Is.EqualTo(expected));
+            VerifyPart2(input.ToEnumerable(), expected);
         }
         
-        [Test]
-        public void TestPart1_Solution()
+        [TestCase(1_300)]
+        public override void TestPart1_Solution(int value)
         {
-            Assert.That(new Day06().Part1(), Is.EqualTo(1300));
+            VerifyPart1(value);
         }
-    
-        [Test]
-        public void TestPart2_Solution()
+
+        [TestCase(3_986)]
+        public override void TestPart2_Solution(int value)
         {
-            Assert.That(new Day06().Part2(), Is.EqualTo(3986));
+            VerifyPart2(value);
         }
 }

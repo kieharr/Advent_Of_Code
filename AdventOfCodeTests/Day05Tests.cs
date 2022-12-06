@@ -1,6 +1,6 @@
 ﻿namespace AdventOfCodeTests;
 
-public class Day05Tests
+public class Day05Tests: AoCTest<Day05, string>
 {
     private readonly IEnumerable<string> _input = @"    [D]    
 [N] [C]    
@@ -15,32 +15,24 @@ move 1 from 1 to 2".ToEnumerable();
     [Test]
     public void TestPart1()
     {
-        var sut = new Day05();
-        
-        var result = sut.Part1(_input);
-        
-        Assert.That(result, Is.EqualTo("CMZ"));
+        VerifyPart1(_input, "CMZ");
     }
     
     [Test]
     public void TestPart2()
     {
-        var sut = new Day05();
-        
-        var result = sut.Part2(_input);
-        
-        Assert.That(result, Is.EqualTo("MCD"));
-    }
-    
-    [Test]
-    public void TestPart1_Solution()
-    {
-        Assert.That(new Day05().Part1(), Is.EqualTo("SHQWSRBDL"));
+        VerifyPart2(_input, "MCD");
     }
 
-    [Test]
-    public void TestPart2_Solution()
+    [TestCase("SHQWSRBDL")]
+    public override void TestPart1_Solution(string value)
     {
-        Assert.That(new Day05().Part2(), Is.EqualTo("CDTQZHBRS"));
+        VerifyPart1(value);
+    }
+
+    [TestCase("CDTQZHBRS")]
+    public override void TestPart2_Solution(string value)
+    {
+        VerifyPart2(value);
     }
 }

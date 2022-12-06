@@ -3,7 +3,7 @@
 public class Day01: Solution<int>
 {
     private static IEnumerable<int> Calories(IEnumerable<string> input) =>  
-        string.Join(Environment.NewLine, input)
+        input.JoinLines()
             .Split($"{Environment.NewLine}{Environment.NewLine}")
             .Select(x => x.Split(Environment.NewLine).Sum(int.Parse));
 

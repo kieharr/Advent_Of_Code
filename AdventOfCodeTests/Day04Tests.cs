@@ -1,6 +1,6 @@
 ﻿namespace AdventOfCodeTests;
 
-public class Day04Tests
+public class Day04Tests: AoCTest<Day04, int>
 {
     private readonly IEnumerable<string> _input = @"2-4,6-8
 2-3,4-5
@@ -12,32 +12,24 @@ public class Day04Tests
     [Test]
     public void TestPart1()
     {
-        var sut = new Day04();
-        
-        var result = sut.Part1(_input);
-        
-        Assert.That(result, Is.EqualTo(2));
+        VerifyPart1(_input, 2);
     }
     
     [Test]
     public void TestPart2()
     {
-        var sut = new Day04();
-        
-        var result = sut.Part2(_input);
-        
-        Assert.That(result, Is.EqualTo(4));
-    }
-    
-    [Test]
-    public void TestPart1_Solution()
-    {
-        Assert.That(new Day04().Part1(), Is.EqualTo(305));
+        VerifyPart2(_input, 4);
     }
 
-    [Test]
-    public void TestPart2_Solution()
+    [TestCase(305)]
+    public override void TestPart1_Solution(int value)
     {
-        Assert.That(new Day04().Part2(), Is.EqualTo(811));
+        VerifyPart1(value);
+    }
+
+    [TestCase(811)]
+    public override void TestPart2_Solution(int value)
+    {
+        VerifyPart2(value);
     }
 }
