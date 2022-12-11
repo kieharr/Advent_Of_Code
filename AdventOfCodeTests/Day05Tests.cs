@@ -1,6 +1,6 @@
 ﻿namespace AdventOfCodeTests;
 
-public class Day05Tests: AoCTest<Day05, string>
+public class Day05Tests: AoCTest<Day05>
 {
     private readonly IEnumerable<string> _input = @"    [D]    
 [N] [C]    

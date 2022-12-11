@@ -1,8 +1,8 @@
 ﻿namespace AdventOfCode._2022;
 
-public class Day02: Solution<int>
+public class Day02: Solution
 {
-    public override int Part1(IEnumerable<string> input)
+    public override string Part1(IEnumerable<string> input)
     {
         var lookup = new Dictionary<string, int>
         {
@@ -16,10 +16,10 @@ public class Day02: Solution<int>
             { "C Y", 2 },
             { "C Z", 6 },
         };
-        return input.Sum(x => lookup[x]);
+        return input.Sum(x => lookup[x]).ToString();
     }
 
-    public override int Part2(IEnumerable<string> input)
+    public override string Part2(IEnumerable<string> input)
     {
         var lookup = new Dictionary<string, int>
         {
@@ -33,6 +33,6 @@ public class Day02: Solution<int>
             { "C Y", 6 },
             { "C Z", 7 },
         };
-        return input.Sum(x => lookup[x]);
+        return input.Sum(x => lookup[x]).ToString();
     }
 }

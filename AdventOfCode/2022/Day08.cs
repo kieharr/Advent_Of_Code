@@ -2,20 +2,20 @@
 
 namespace AdventOfCode._2022;
 
-public class Day08: Solution<int>
+public class Day08: Solution
 {
     private Dictionary<Point, int> _map = new();
 
-    public override int Part1(IEnumerable<string> input)
+    public override string Part1(IEnumerable<string> input)
     {
         _map = BuildMap(input);
-        return _map.Count(x => IsVisible(x.Key));
+        return _map.Count(x => IsVisible(x.Key)).ToString();
     }
     
-    public override int Part2(IEnumerable<string> input)
+    public override string Part2(IEnumerable<string> input)
     {
         _map = BuildMap(input);
-        return _map.Select(x => GetScenicScore(x.Key)).Max();
+        return _map.Select(x => GetScenicScore(x.Key)).Max().ToString();
     }
 
     private bool IsVisible(Point point)

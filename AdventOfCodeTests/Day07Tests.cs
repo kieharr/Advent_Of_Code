@@ -2,7 +2,7 @@ using System.Diagnostics;
 
 namespace AdventOfCodeTests;
 
-public class Day07Tests: AoCTest<Day07, long>
+public class Day07Tests: AoCTest<Day07>
 {
     private readonly IEnumerable<string> _input = @"$ cd /
 $ ls
@@ -31,23 +31,23 @@ $ ls
     [Test]
     public void TestPart1()
     {
-        VerifyPart1(_input, 95437);
+        VerifyPart1(_input, "95437");
     }
     
     [Test]
     public void TestPart2()
     {
-        VerifyPart2(_input, 24933642);
+        VerifyPart2(_input, "24933642");
     }
     
-    [TestCase(1391690)]
-    public override void TestPart1_Solution(long value)
+    [TestCase("1391690")]
+    public override void TestPart1_Solution(string value)
     {
         VerifyPart1(value);
     }
 
-    [TestCase(5469168)]
-    public override void TestPart2_Solution(long value)
+    [TestCase("5469168")]
+    public override void TestPart2_Solution(string value)
     {
         VerifyPart2(value);
     }

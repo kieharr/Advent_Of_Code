@@ -2,9 +2,9 @@
 
 namespace AdventOfCode._2022;
 
-public class Day09: Solution<int>
+public class Day09: Solution
 {
-    public override int Part1(IEnumerable<string> input)
+    public override string Part1(IEnumerable<string> input)
     {
         var visited = new HashSet<Point>();
         var head = new Point(0, 0);
@@ -20,10 +20,10 @@ public class Day09: Solution<int>
             }
 
         }
-        return visited.Count;
+        return visited.Count.ToString();
     }
     
-    public override int Part2(IEnumerable<string> input)
+    public override string Part2(IEnumerable<string> input)
     {
         const int length = 10;
         var visited = new HashSet<Point>();
@@ -42,7 +42,7 @@ public class Day09: Solution<int>
             }
 
         }
-        return visited.Count;
+        return visited.Count.ToString();
     }
 
     //todo clean up

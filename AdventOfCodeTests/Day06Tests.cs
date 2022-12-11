@@ -1,6 +1,6 @@
 ﻿namespace AdventOfCodeTests;
 
-public class Day06Tests: AoCTest<Day06, int>
+public class Day06Tests: AoCTest<Day06>
 {
         [TestCase("mjqjpqmgbljsphdztnvjfqwrcgsmlb", 7)]
         [TestCase("bvwbjplbgvbhsrlpgdmjqwftvncz", 5)]
@@ -9,7 +9,7 @@ public class Day06Tests: AoCTest<Day06, int>
         [TestCase("zcfzfwzzqfrljwzlrfnpqdbhtmscgvjw", 11)]
         public void TestPart1(string input, int expected)
         {
-            VerifyPart1(input.ToEnumerable(), expected);
+            VerifyPart1(input.ToEnumerable(), expected.ToString());
         }
         
         [TestCase("mjqjpqmgbljsphdztnvjfqwrcgsmlb", 19)]
@@ -19,17 +19,17 @@ public class Day06Tests: AoCTest<Day06, int>
         [TestCase("zcfzfwzzqfrljwzlrfnpqdbhtmscgvjw", 26)]
         public void TestPart2(string input, int expected)
         {
-            VerifyPart2(input.ToEnumerable(), expected);
+            VerifyPart2(input.ToEnumerable(), expected.ToString());
         }
         
-        [TestCase(1_300)]
-        public override void TestPart1_Solution(int value)
+        [TestCase("1300")]
+        public override void TestPart1_Solution(string value)
         {
             VerifyPart1(value);
         }
 
-        [TestCase(3_986)]
-        public override void TestPart2_Solution(int value)
+        [TestCase("3986")]
+        public override void TestPart2_Solution(string value)
         {
             VerifyPart2(value);
         }

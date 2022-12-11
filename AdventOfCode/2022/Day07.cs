@@ -1,6 +1,6 @@
 namespace AdventOfCode._2022;
 
-public class Day07: Solution<long>
+public class Day07: Solution
 {
     private static Node GetStructure(IEnumerable<string> input)
     {
@@ -38,24 +38,24 @@ public class Day07: Solution<long>
         return root;
     }
     
-    public override long Part1(IEnumerable<string> input)
+    public override string Part1(IEnumerable<string> input)
     {
         var root = GetStructure(input);
 
         var sizes = new Dictionary<Node, long>();
         root.GetSize(sizes);
 
-        return sizes.Where(x => x.Value <= 100000).Sum(x => x.Value);
+        return sizes.Where(x => x.Value <= 100000).Sum(x => x.Value).ToString();
     }
 
-    public override long Part2(IEnumerable<string> input)
+    public override string Part2(IEnumerable<string> input)
     {
         var root = GetStructure(input);
 
         var sizes = new Dictionary<Node, long>();
         var neededSpace = -(40_000_000 - root.GetSize(sizes));
         
-        return sizes.Where(x => x.Value >= neededSpace).Min(x => x.Value);
+        return sizes.Where(x => x.Value >= neededSpace).Min(x => x.Value).ToString();
     }
 }
 

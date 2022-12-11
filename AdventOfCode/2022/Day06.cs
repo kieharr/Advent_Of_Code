@@ -1,15 +1,15 @@
 ﻿namespace AdventOfCode._2022;
 
-public class Day06: Solution<int>
+public class Day06: Solution
 {
-    public override int Part1(IEnumerable<string> input)
+    public override string Part1(IEnumerable<string> input)
     {
-        return GetMarker(input.First(), 4);
+        return GetMarker(input.First(), 4).ToString();
     }
 
-    public override int Part2(IEnumerable<string> input)
+    public override string Part2(IEnumerable<string> input)
     {
-        return GetMarker(input.First(), 14);
+        return GetMarker(input.First(), 14).ToString();
     }
 
     private static int GetMarker(string input, int distinctCount)

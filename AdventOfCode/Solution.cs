@@ -1,16 +1,16 @@
 ﻿namespace AdventOfCode;
 
-public abstract class Solution<TResult>
+public abstract class Solution
 {
-    public abstract TResult Part1(IEnumerable<string> input);
-    public abstract TResult Part2(IEnumerable<string> input);
+    public abstract string Part1(IEnumerable<string> input);
+    public abstract string Part2(IEnumerable<string> input);
 
-    public TResult Part1()
+    public string Part1()
     {
         return Part1(File.ReadLines(_filename));
     }
 
-    public TResult Part2()
+    public string Part2()
     {
         return Part2(File.ReadLines(_filename));
     }

@@ -2,20 +2,20 @@
 
 namespace AdventOfCode._2022;
 
-public class Day04: Solution<int>
+public class Day04: Solution
 {
     private readonly Regex _regex = new (@"(\d+)-(\d+),(\d+)-(\d+)");
 
-    public override int Part1(IEnumerable<string> input)
+    public override string Part1(IEnumerable<string> input)
     {
         return input.Select(GetRanges)
-            .Count(x => !x.Item1.Except(x.Item2).Any() || !x.Item2.Except(x.Item1).Any());
+            .Count(x => !x.Item1.Except(x.Item2).Any() || !x.Item2.Except(x.Item1).Any()).ToString();
     }
 
-    public override int Part2(IEnumerable<string> input)
+    public override string Part2(IEnumerable<string> input)
     {
         return input.Select(GetRanges)
-            .Count(x => x.Item1.Intersect(x.Item2).Any());
+            .Count(x => x.Item1.Intersect(x.Item2).Any()).ToString();
     }
     
     private (List<int>, List<int>) GetRanges(string input)

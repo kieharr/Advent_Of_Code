@@ -2,7 +2,7 @@
 
 namespace AdventOfCode._2022;
 
-public class Day05: Solution<string>
+public class Day05: Solution
 {
     private readonly Regex _moveRegex = new(@"move (?'move'\d+) from (?'from'\d+) to (?'to'\d+)");
 

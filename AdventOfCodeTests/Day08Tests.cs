@@ -1,6 +1,6 @@
 ﻿namespace AdventOfCodeTests;
 
-public class Day08Tests: AoCTest<Day08, int>
+public class Day08Tests: AoCTest<Day08>
 {
     private readonly IEnumerable<string> _input = @"30373
 25512
@@ -11,23 +11,23 @@ public class Day08Tests: AoCTest<Day08, int>
     [Test]
     public void TestPart1()
     {
-        VerifyPart1(_input, 21);
+        VerifyPart1(_input, "21");
     }
     
     [Test]
     public void TestPart2()
     {
-        VerifyPart2(_input, 8);
+        VerifyPart2(_input, "8");
     }
     
-    [TestCase(1681)]
-    public override void TestPart1_Solution(int value)
+    [TestCase("1681")]
+    public override void TestPart1_Solution(string value)
     {
         VerifyPart1(value);
     }
 
-    [TestCase(201684)]
-    public override void TestPart2_Solution(int value)
+    [TestCase("201684")]
+    public override void TestPart2_Solution(string value)
     {
         VerifyPart2(value);
     }
