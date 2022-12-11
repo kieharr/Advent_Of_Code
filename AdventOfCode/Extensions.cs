@@ -1,4 +1,5 @@
 using System.Drawing;
+using System.Text.RegularExpressions;
 
 namespace AdventOfCode;
 
@@ -17,4 +18,17 @@ public static class Extensions
             _ => throw new ArgumentOutOfRangeException(nameof(direction), direction, null)
         };
     }
+
+    public static string GetFirstInGroup(this Match match, string groupName)
+        => match.Groups[groupName].Captures.First().Value;
+    
+    public static T GetFirstInGroup<T>(this Match match, string groupName)
+        => (T)Convert.ChangeType(match.Groups[groupName].Captures.First().Value, typeof(T));
+
+    public static IEnumerable<string> GetAllInGroup(this Match match, string groupName)
+        => match.Groups[groupName].Captures.Select(x => x.Value);
+    
+    public static IEnumerable<T> GetAllInGroup<T>(this Match match, string groupName)
+    => match.Groups[groupName].Captures.Select(x => (T)Convert.ChangeType(x.Value, typeof(T)));
+
 }
